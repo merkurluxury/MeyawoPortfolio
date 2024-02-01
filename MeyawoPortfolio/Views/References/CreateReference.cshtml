@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "CreateReference";
+    Layout = "~/Views/AdminLayout/_Layout.cshtml";
+}
+
+
+<h2>Yeni Referans Girişi</h2>
+
+<style>
+    .form-input {
+        border: 2px solid #ddd;
+        border-radius: 4px;
+        padding: 10px;
+        margin: 10px 0;
+        width: 95%;
+    }
+
+    .btn-cool {
+        background-color: #4CAF50; /* Yeşil arka plan */
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        letter-spacing: 1.5px;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+        .btn-cool:hover, .btn-cool:focus {
+            background-color: #45a049;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            transform: translateY(-2px);
+        }
+
+    label {
+        display: block;
+        margin: 10px 0 5px 0;
+    }
+
+    form {
+        margin: 20px 0;
+    }
+</style>
+
+<form method="post">
+    <label>Referans ID</label>
+    <input type="text" class="form-input" name="TestimonialId" />
+
+    <label>Ad Soyad</label>
+    <input type="text" class="form-input" name="NameSurname" />
+
+    <label>Resim</label>
+    <input type="text" class="form-input" name="ImageUrl" />
+
+    <label>Açıklama</label>
+    <input type="text" class="form-input" name="Description" />
+
+    <label>Durum</label>
+    <input type="text" class="form-input" name="Status" />
+
+    <button type="submit" class="btn-cool">Referansı Kaydet</button>
+</form>

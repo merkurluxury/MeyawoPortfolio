@@ -1,0 +1,35 @@
+﻿﻿@model MeyawoPortfolio.Models.TblProject
+
+@{
+    ViewBag.Title = "CreateProject";
+    Layout = "~/Views/AdminLayout/_Layout.cshtml";
+}
+
+<h2>Yeni Proje Girişi</h2>
+
+<form method="post">
+    <label>Proje İsmi</label>
+    <input type="text" class="table table-bordered" name="Title" />
+    <br />
+    <label>Proje Başlığı</label>
+    <input type="text" class="table table-bordered" name="Header" />
+    <br />
+    <label>Proje Açıklaması</label>
+    <input type="text" class="table table-bordered" name="Description" />
+    <br />
+    <label>Proje Görseli</label>
+    <input type="text" class="table table-bordered" name="ImageUrl" />
+    <br />
+    <br /> <label>Proje Urlsi</label>
+    <input type="text" class="table table-bordered" name="ProjectUrl" />
+    <br />
+    <label> Proje Kategorisi</label>
+    @Html.DropDownListFor(x => x.ProjectCategory, (List<SelectListItem>)ViewBag.v, new { @class = "table tabel-bordered" })
+    <br />
+
+
+
+    <br />
+    <button class="btn btn-info">Projeyi Kaydet</button>
+</form>
+

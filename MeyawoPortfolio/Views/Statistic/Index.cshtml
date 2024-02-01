@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/_Layout.cshtml";
+}
+
+<<div class="alert alert-danger">Kategori Sayısı: @ViewBag.categoryCount</div>
+
+<div class="alert alert-warning">Proje Sayısı: @ViewBag.projectCount</div>
+
+<div class="alert alert-info">Mesaj Sayısı: @ViewBag.messageCount</div>
+
+<div class="alert alert-dark">Flutter Proje Sayısı: @ViewBag.flutterProjectCount</div>
+
+<div class="alert alert-primary">Okunmamış Mesaj Sayısı: @ViewBag.isNotReadMessageCount</div>
+
+<div class="alert alert-success">Eklenen Son Proje Adı: @ViewBag.lastProjectName</div>
+
+<div class="alert alert-danger">
+    Sosyal Medya Sayısı: @ViewBag.sosyalMedyaCount
+</div>
+
+<div class="alert alert-success">
+    Son Servis Başlığı: @ViewBag.LastServiceTitle
+</div>
+
+<div class="alert alert-info">
+    <h3>Referansların İsimleri:</h3>
+    <ul>
+        @foreach (var nameSurname in ViewBag.NamesSurnames)
+        {
+            <li>@nameSurname</li>
+        }
+    </ul>
+</div>
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header">
+            SON MESAJ
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">@ViewBag.LastContact.NameSurname</h5>
+            <p class="card-text">@ViewBag.LastContact.Message</p>
+        </div>
+    </div>
+</div>
+
+<style>
+    .card-header {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .container {
+        padding-left: 0; /* Konteynerın sol padding'ini kaldır */
+    }
+
+    .card {
+        margin-bottom: 20px; /* Alt kısımdan boşluk */
+        box-shadow: 0 2px 4px rgba(0,0,0,.1); /* Kart için hafif gölge */
+    }
+</style>

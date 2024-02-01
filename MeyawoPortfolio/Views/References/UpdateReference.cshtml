@@ -1,0 +1,66 @@
+﻿﻿@model MeyawoPortfolio.Models.TblReferences
+
+@{
+    ViewBag.Title = "UpdateReference";
+    Layout = "~/Views/AdminLayout/_Layout.cshtml";
+}
+
+<h2>Referans Güncelleme Sayfası</h2>
+
+<style>
+    .form-input {
+        border: 2px solid #ddd;
+        border-radius: 4px;
+        padding: 10px;
+        margin: 10px 0;
+        width: 95%;
+    }
+
+    .btn-cool {
+        background-color: #4CAF50; /* Yeşil arka plan */
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        letter-spacing: 1.5px;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+        .btn-cool:hover, .btn-cool:focus {
+            background-color: #45a049;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            transform: translateY(-2px);
+        }
+
+    label {
+        display: block;
+        margin: 10px 0 5px 0;
+    }
+
+    form {
+        margin: 20px 0;
+    }
+</style>
+
+<form method="post">
+    <label>Referans Id</label>
+    <input type="text" class="form-input" value="@Model.TestimonialId" name="TestimonialId" />
+
+    <label>Ad Soyad</label>
+    <input type="text" class="form-input" value="@Model.NameSurname" name="NameSurname" />
+
+    <label>Referans Görseli</label>
+    <input type="text" class="form-input" value="@Model.ImageUrl" name="ImageUrl" />
+
+    <label>Açıklama Görseli</label>
+    <input type="text" class="form-input" value="@Model.Description" name="Description" />
+
+    <label>Durum</label>
+    <input type="text" class="form-input" value="@Model.Status" name="Status" />
+
+    <button type="submit" class="btn-cool">Referans Güncelle</button>
+</form>

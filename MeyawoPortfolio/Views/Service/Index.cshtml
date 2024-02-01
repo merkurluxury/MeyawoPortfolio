@@ -1,0 +1,106 @@
+﻿@model List<MeyawoPortfolio.Models.TblService>
+@{ ViewBag.Title = "Index";
+                Layout = "~/Views/AdminLayout/_Layout.cshtml"; }
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+            .table, .table th, .table td {
+                border: 1px solid #ddd;
+            }
+
+                .table th, .table td {
+                    text-align: left;
+                    padding: 8px;
+                }
+
+                .table th {
+                    background-color: #f2f2f2;
+                    color: black;
+                }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            font-size: 14px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 5px #999;
+        }
+
+            .btn:hover {
+                background-color: #3e8e41
+            }
+
+            .btn:active {
+                background-color: #3e8e41;
+                box-shadow: 0 3px #666;
+                transform: translateY(4px);
+            }
+
+        .btn-primary {
+            background-color: #007bff;
+        }
+
+            .btn-primary:hover {
+                background-color: #0069d9;
+            }
+
+        .btn-success {
+            background-color: #28a745;
+        }
+
+            .btn-success:hover {
+                background-color: #218838;
+            }
+
+        .btn-danger {
+            background-color: #dc3545;
+        }
+
+            .btn-danger:hover {
+                background-color: #c82333;
+            }
+    </style>
+</head>
+<body>
+
+    <h2>Services</h2>
+    <table class="table table-bordered">
+        <tr>
+            <th>Service ID</th>
+            <th>Service Title</th>
+            <th>Service Description</th>
+            <th>Service Image</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ServiceID</td>
+                <td>@item.Title</td>
+                <td>@item.Description</td>
+                <td>@item.ImageUrl</td>
+                <td><a href="/Service/UpdateService/@item.ServiceID" class="btn btn-success">Update</a></td>
+                <td><a href="/Service/DeleteService/@item.ServiceID" class="btn btn-danger">Delete</a></td>
+            </tr>
+        }
+    </table>
+    <a href="/Service/CreateService" class="btn btn-primary">Add New Service</a>
+
+</body>
+</html>
+

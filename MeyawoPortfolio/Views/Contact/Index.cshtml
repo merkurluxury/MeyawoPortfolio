@@ -1,0 +1,36 @@
+﻿@model List<MeyawoPortfolio.Models.TblContact>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/_Layout.cshtml";
+}
+
+<h2> Mesajlar Sayfası</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <td>Message ID</td>
+        <td>Sender</td>
+        <td>Categories</td>
+        <td>Date</td>
+        <td>Read Status</td>
+        <td>Open Message</td>
+        <td>Delete Message</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ContactID</td>
+            <td>@item.NameSurname</td>
+            <td>@item.MessageCategory</td>
+            <td>@item.SendDate</td>
+           <td>@(item.IsRead.HasValue ? (item.IsRead.Value ? "Okundu" : "Okunmadı") : "Bilinmiyor")</td> <!-- Nullable bool kontrolü -->
+            <td ><a href="/Contact/OpenMessage/@item.ContactID" class="btn btn-info">Open Message</a></td>
+            <td ><a href="/Contact/DeleteContact/@item.ContactID" class="btn btn-danger">Delete Message</a></td>
+            <td> <a href="/Contact/MarkAsRead/@item.ContactID" class="btn btn-warning">Okundu Olarak İşaretle</a> </td> 
+
+        </tr>
+
+    }
+</table>
+

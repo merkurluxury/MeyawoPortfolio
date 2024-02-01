@@ -1,0 +1,24 @@
+﻿﻿@model MeyawoPortfolio.Models.TblSocialMedia
+
+@{
+    ViewBag.Title = "UpdateSocialMedia";
+    Layout = "~/Views/AdminLayout/_Layout.cshtml";
+}
+
+<h2>Sosyal Medya Güncelleme Sayfası</h2>
+
+<form method="post">
+    <label>Sosyal Medya Id</label>
+    <input type="text" class="table table-bordered" value="@Model.SocialMediaID" name="SocialMediaID" />
+    <br />
+    <label>Sosyal Medya Başlığı</label>
+    <input type="text" class="table table-bordered" value="@Model.Title" name="Title" />
+    <br />
+    <label>Sosyal MEdya URL </label>
+    <input type="text" class="table table-bordered" value="@Model.SocialMediaUrl" name="SocialMediaUrl" />
+    <br />
+    <label> Sosyal Medya İcon</label>
+    <input type="text" class="table table-bordered" value="@Model.Icon" name="Icon" />
+    <br />
+    <button class="btn btn-info"> Güncelle</button>
+</form>

@@ -1,0 +1,20 @@
+﻿@model MeyawoPortfolio.Models.TblContact
+
+@{
+    ViewBag.Title = "OpenMessage";
+    Layout = "~/Views/AdminLayout/_Layout.cshtml";
+}
+
+
+<h2>Mesaj Detayları</h2>
+
+<div class="details">
+    <p><strong>Gönderen Mail:</strong> @Model.Email</p>
+    <p><strong>Gönderici:</strong> @Model.NameSurname</p>
+    <p><strong>Kategori:</strong> @Model.MessageCategory</p>
+    <p><strong>Gönderim Tarihi:</strong> @Model.SendDate</p>
+    <p><strong>Mesaj:</strong> @Model.Message</p> <!-- Modelinizde mesaj içeriği için bir alan varsa -->
+</div>
+
+@* Geri dönmek için bir link veya buton ekleyebilirsiniz *@
+<a href="@Url.Action("Index", "Contact")" class="btn btn-primary">Geri Dön</a>

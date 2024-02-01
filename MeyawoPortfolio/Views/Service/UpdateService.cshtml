@@ -1,0 +1,83 @@
+﻿@model MeyawoPortfolio.Models.TblService
+@{
+    ViewBag.Title = "UpdateService";
+    Layout = "~/Views/AdminLayout/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .full-screen-container {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .form-container {
+            width: 60%; /* Form genişliği */
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.9); /* Yarı şeffaf arka plan */
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+            .form-container h2 {
+                margin-bottom: 20px;
+                color: #333;
+            }
+
+            .form-container input[type=text],
+            .form-container textarea {
+                width: 90%; /* İnput genişliği */
+                padding: 10px;
+                margin: 10px 0;
+                border-radius: 5px;
+                border: 1px solid #ddd;
+                box-sizing: border-box;
+            }
+
+            .form-container button {
+                background-color: #4CAF50;
+                color: white;
+                padding: 15px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 18px;
+                width: 90%; /* Buton genişliği */
+                margin-top: 20px;
+            }
+
+                .form-container button:hover {
+                    background-color: #45a049;
+                }
+    </style>
+</head>
+<body>
+
+    <div class="full-screen-container">
+        <div class="form-container">
+            <h2>UpdateService Sayfası</h2>
+            <form method="post">
+                <input type="text" value="@Model.ServiceID" name="ServiceID" placeholder="Hizmet Id" />
+                <input type="text" value="@Model.Title" name="Title" placeholder="Hizmet Başlığı" />
+                <input type="text" value="@Model.ImageUrl" name="ImageUrl" placeholder="Hizmet Görseli" />
+                <textarea rows="4" name="Description" placeholder="Hizmet Açıklaması">@Model.Description</textarea>
+                <button type="submit">Hizmeti Güncelle</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
